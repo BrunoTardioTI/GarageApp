@@ -1,12 +1,12 @@
-// src/screens/LoginScreen.tsx
 import React from 'react';
 import { SafeAreaView, Alert } from 'react-native';
-import Login from '../components/Login/Login';
+import Login from '../../components/Login';
+import { mockLoginData } from '../../mocks/authMocks'; // Importe o mock
 
 const LoginScreen: React.FC = () => {
     const handleLogin = (username: string, password: string) => {
-        // Mock de autenticação
-        if (username === 'mecanico' && password === 'senha123') {
+        // Simule a autenticação com os dados mockados
+        if (username === mockLoginData.username && password === mockLoginData.password) {
             Alert.alert('Login bem-sucedido!', 'Bem-vindo ao GarageApp!');
         } else {
             Alert.alert('Erro', 'Usuário ou senha incorretos');
